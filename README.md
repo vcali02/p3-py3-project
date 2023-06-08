@@ -104,3 +104,5 @@ Val's Library utilizes a one-to-many and many-many relationship schema, and it f
 [SQLalchemy](https://www.sqlalchemy.org/)
 
 [Rich Documentation](https://rich.readthedocs.io/en/stable/introduction.html)
+
+[Faker Documentation](https://faker.readthedocs.io/en/master/writing-docs.html)
