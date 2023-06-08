@@ -24,7 +24,7 @@ if __name__ == '__main__':
     #empty lost for readers
     readers = []
     #create for loop that creates 50 readers
-    for _ in range(25):
+    for _ in range(random.randint(10, 25)):
         reader = Reader(
         reader_name=f"{fake.name()}"
     )
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     #loop that iterates over the reader
     for reader in readers:
         #loop that iterates 1-3 times, to give the reader between 1-3 books to their name
-        for _ in range(random.randint(1,3)):
+        for _ in range(random.randint(10, 25)):
             book = Book(
                 #generate book instances that are random based on the provided list book_titles
                 book_title = random.choice(book_titles)
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     ####CREATE A LIST OF CHECKED OUT BOOKS W. CHECK OUT AND CHECK IN DATES####
     checked_out_books = []
     for reader in readers:
-        for _ in range(random.randint(1, 5)):
+        for _ in range(random.randint(10, 25)):
             checked_out = CheckedOutBook(
                 checkout_date = fake.date_this_year(),
                 check_in_date = fake.date_this_year(),
