@@ -1,7 +1,7 @@
 # Val's Library CLI App
 
 
-Val's Library is a CLI application that allows a librarian to see a list of available books, see a list of libary members, or readers, add new library members/readers, add new books, delete members/readers and books. 
+Val's Library is a CLI application that allows a librarian to see a list of available books, see a list of library members, or readers, add new library members/readers, add new books, delete members/readers and books. 
 This README file will explain how to use the application and how each function works.
 
 
