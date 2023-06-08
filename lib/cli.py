@@ -1,3 +1,4 @@
+from datetime import datetime
 #allows you to print formatted text, render tables
 from rich.console import Console
 #allows you to define custom color
@@ -138,7 +139,11 @@ class CLI:
         book_id = input("Enter book ID: ")
         #prompts the user to enter the checkout date in the format "YYYY-MM-DD"
         #stores the input in the checkout_date variable
-        checkout_date = input("Enter checkout date (YYYY-MM-DD): ")
+        checkout_date_str = input("Enter checkout date (YYYY-MM-DD): ")
+        checkin_date_str = input("Enter checkin date (YYYY-MM-DD): ")
+        #take str variable as 1st argument in next two lines
+        checkout_date = datetime.strptime(checkout_date_str, "%Y-%m-%d")
+        checkin_date = datetime.strptime(checkin_date_str, "%Y-%m-%d")
         
 
        #retrieves the Reader instance with the reader_id using the get() method
@@ -154,7 +159,7 @@ class CLI:
                 reader_id=reader_id,
                 book_id=book_id,
                 checkout_date=checkout_date,
-                #check_in_date=checkin_date
+                check_in_date=checkin_date
             )
             #adds the checked_out_book object to the session.
             session.add(checked_out_book)
