@@ -1,13 +1,27 @@
+#allows you to print formatted text, render tables
 from rich.console import Console
+#allows you to define custom color
 from rich.theme import Theme
+#defines table columns, add rows of data, and customize the style and appearance of the table
 from rich.table import Table
+#supports features like headers, lists, bold and italic text, code blocks etc
 from rich.markdown import Markdown
+#used to create a SQLAlchemy engine (which represents the interface to the database)
+#takes a database URL as an argument and returns an engine instance that can be used to establish a connection to the database
 from sqlalchemy import create_engine
+#takes an Engine instance as an argument and when called creates a new Session bound to that Engine
+#perform CRUD
 from sqlalchemy.orm import sessionmaker
+#importing the base classes
 from db.models import *
 
+#creates a SQLAlchemy engine object using the create_engine function
+#argument 'sqlite:///library.db' specifies the connection URL to the SQLite database
 engine = create_engine('sqlite:///library.db')
+#sessionmaker object is created using the sessionmaker class
+#bind parameter binds/connects the sessionmaker to the database engine
 Session = sessionmaker(bind=engine)
+#creates a new session by calling the sessionmaker object, which returns an instance of the Session class
 session = Session()
 
 MARKDOWN = """
